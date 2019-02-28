@@ -1,0 +1,31 @@
+﻿<script>
+    $(function(){
+    $('a[href*=#],area[href*=#]').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+            if ($target.length) {
+                var targetOffset = $target.offset().top;
+                $('html,body,.div1').animate({
+                    scrollTop: targetOffset
+                },
+                1000);
+                return false;
+            }
+        }
+    });
+})
+</script>
+
+<div class="float2">
+    <ul>
+        <li><a href="#a01" class="a01 on" id="idx01">限时抢购</a></li>
+        <li><a href="#a02" class="a02" id="idx02"></a></li>
+        <li><a href="#a03" class="a03" id="idx03"></a></li>
+        <li><a href="#a04" class="a04" id="idx04"></a></li>
+        <li><a href="#a05" class="a05" id="idx05"></a></li>
+        <li><a href="#a06" class="a06" id="idx06"></a></li>
+        <li><a href="#" class="a01 on" id="idx01">返回顶部</a></li>
+    </ul>
+</div>
+
