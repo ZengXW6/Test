@@ -4,33 +4,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="menu">
-    <div class="w1200">
-        <div class="item" id="nav">
-            <a href="#" class="nav">全部商品分类</a>
-            <div class="nav_son">
-                <ul>
-                    <li class="li01"><a href="#">功能产品</a></li>
-                    <li class="li02"><a href="#">服装箱包</a></li>
-                    <li class="li03"><a href="#">美妆护肤</a></li>
-                    <li class="li04"><a href="#">珠宝饰品</a></li>
-                    <li class="li05"><a href="#">数码家电</a></li>
-                    <li class="li06"><a href="#">食品茶酒</a></li>
-                    <li class="li07"><a href="#">运动体育</a></li>
-                    <li class="li08"><a href="#">家居家纺</a></li>
-                    <li class="li09"><a href="#">生活服务</a></li>
-                    <li class="li10"><a href="#">其他</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="item"><a href="#" class="home">商城首页</a></div>
-        <div class="item"><a href="#">易易特色</a></div>
-        <div class="item"><a href="#">热销产品</a></div>
-        <div class="item"><a href="#">新品上市</a></div>
-        <div class="item"><a href="#">精品推荐</a></div>
-        <div class="item"><a href="#">生活服务</a></div>
-    </div>
-</div>
+<script>
+    $(document).ready(function () {
+        $(".float2").css("display", "none");
+    })
+</script>
 
 
 <div class="w1200">
@@ -99,9 +77,9 @@
         </dl>
         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="go_tb">
             <tr>
-                <td width="20%"><a href="#" class="go_buy">继续购物</a></td>
+                <td width="20%"><a href="Index" class="go_buy">继续购物</a></td>
                 <td width="63%">&nbsp;</td>
-                <td width="17%" align="right"><a href="#" class="code">结 算</a></td>
+                <td width="17%" align="right"><a href="InFo" class="code">结 算</a></td>
             </tr>
         </table>
         <div class="clear"></div>
