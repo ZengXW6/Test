@@ -2,6 +2,8 @@
 @{
     Layout = null;
 }
+@model YIYICHENG.Models.Users
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -26,25 +28,41 @@
         <div class="clear"></div>
     </div>
 
+
     <div class="reg">
         <div class="w1185">
             <div class="left">
                 <p><b>免费注册</b></p>
-                <form action="#" class="form">
+                <form action="Registers" method="post" class="form">
                     <ul>
-                        <li><span><font>*</font> 用户名/手机号：</span><input type="text" name="" class="txt" /></li>
-                        <li><span><font>*</font> 请设置密码：</span><input type="text" name="" class="txt" /></li>
-                        <li><span><font>*</font> 请确认密码：</span><input type="text" name="" class="txt" /></li>
-                        <li class="li03"><span><font>*</font> 验证码：</span><input type="text" name="" class="txt txt2" /><img src="~/images/code.jpg" /><a href="#">看不清?换一张</a></li>
+                        <li><span><font>*</font> 用户名/手机号：</span><input type="text" name="UserName" class="txt" /></li>
+
+                        <li><span><font>*</font> 请设置密码：</span><input type="text" id="pwds" name="Pwd" class="txt" /></li>
+
+                        <li><span><font>*</font> 请确认密码：</span><input type="text" id="pwds1" onblur="pwds()" name="Pwd" class="txt" /></li>
+
+                        <li class="li03">
+                            <span><font>*</font> 验证码：</span><input class="txt" id="code" type="text" />
+                            <img id="valiCode" src="../Home/GetValidateCode" alt="验证码" title="点击刷新" width="136" height="39" />
+                            <script type="text/javascript">
+                                $(document).ready(function () {
+                                    $("#valiCode").bind("click", function () {
+                                        this.src = "/Home/GetValidateCode?&time=" + (new Date()).getTime();
+                                    });
+                                });
+                            </script>
+
+                        </li>
                         <li class="li01"><input type="checkbox" value="" name="" />我已阅并同意<a rel="#">《易易城用户注册协议》</a></li>
                         <li class="li02"><input type="submit" value="立即注册" class="sub" /></li>
                     </ul>
                 </form>
             </div>
-            <div class="right">我经注册，马上<a rel="#">登录</a></div>
+            <div class="right">我经注册，马上<a href="@Url.Action("Login","Home")">登录</a></div>
             <div class="clear"></div>
         </div>
     </div>
+  
 
     <div class="bottom">
         <a href="#">关于我们</a>|<a href="#">帮助中心</a>|<a href="#">法律声明</a>|<a href="#">用户协议</a>|<a href="#">联系我们</a>|<a href="#">人才招聘</a>|<a href="#">站点地图</a>

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Forcheng.Code;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using YIYICHENG.Models;
 
 namespace YIYICHENG.Controllers
 {
@@ -25,12 +27,20 @@ namespace YIYICHENG.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Registers(Users us)
+        {
+          
+            return View("Login");
+        }
+
         //产品列表
         public ActionResult Product()
         {
             return View();
         }
 
+        //我是用来给你们看的
         //购物车
         public ActionResult ShoppingCat()
         {
@@ -66,5 +76,65 @@ namespace YIYICHENG.Controllers
         {
             return View();
         }
+
+
+
+
+
+
+
+        /// <summary>
+        /// 获取图片验证码
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult GetValidateCode(string codeClass)
+        {
+            ValidateCode vCode = new ValidateCode();
+            string code = vCode.CreateValidateCode(4);
+            Session["ValidateCode"] = code;
+            byte[] bytes = vCode.CreateValidateGraphic(code);
+            return File(bytes, @"image/jpeg");
+        }
+
+        /// <summary>
+        /// 验证验证码是否正确
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public bool CheckValidateCode(string num)
+        {
+
+            string cnum = Session["ValidateCode"] == null ? "" : Session["ValidateCode"].ToString();
+
+            if (num == cnum && !string.IsNullOrEmpty(num))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 验证码检查
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult CodeVerify()
+        {
+            string code = Request["code"];
+            string result = string.Empty;
+            if (CheckValidateCode(code))
+            {
+                result = "1";
+                return Content(result);
+            }
+            else
+            {
+                result = "0";
+                return Content(result);
+            }
+        }
+
     }
 }
