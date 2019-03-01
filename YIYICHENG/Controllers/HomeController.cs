@@ -20,7 +20,7 @@ namespace YIYICHENG.Controllers
             return View();
         }
         //注册页面
-        public ActionResult Regster()
+        public ActionResult Register()
         {
             return View();
         }
