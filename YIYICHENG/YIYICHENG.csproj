@@ -362,6 +362,11 @@
     <Content Include="Views\Home\Regster.cshtml" />
     <Content Include="Views\Home\Product.cshtml" />
     <Content Include="Views\Home\ShoppingCat.cshtml" />
+    <Content Include="Views\Home\Pwd.cshtml" />
+    <Content Include="Views\Home\ProductShow.cshtml" />
+    <Content Include="Views\Home\InFo.cshtml" />
+    <Content Include="Views\Home\Member.cshtml" />
+    <Content Include="Views\Home\Payply.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

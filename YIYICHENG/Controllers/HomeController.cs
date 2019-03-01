@@ -36,5 +36,35 @@ namespace YIYICHENG.Controllers
         {
             return View();
         }
+
+        //修改密码
+        public ActionResult Pwd()
+        {
+            return View();
+        }
+
+        //产品详情
+        public ActionResult ProductShow()
+        {
+            return View();
+        }
+
+        //提交订单
+        public ActionResult InFo()
+        {
+            return View();
+        }
+
+        //会员中心
+        public ActionResult Member()
+        {
+            return View();
+        }
+
+        //选择支付
+        public ActionResult Payply()
+        {
+            return View();
+        }
     }
 }

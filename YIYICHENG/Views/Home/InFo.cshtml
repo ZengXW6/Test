@@ -1,8 +1,9 @@
 ﻿
 @{
-    ViewBag.Title = "ShoppingCat";
+    ViewBag.Title = "InFo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 
 <div class="menu">
     <div class="w1200">
@@ -37,23 +38,42 @@
     <div class="position"><a href="#">首页</a> > <a href="#">购物车</a></div>
 
     <div class="shopcar">
-        <div class="shop_lc"><span class="sp01">我的购物车</span><span class="sp02">填写提交信息表单</span><span class="sp03">在线支付</span></div>
+        <div class="info_lc"><span class="sp01">我的购物车</span><span class="sp02">填写提交信息表单</span><span class="sp03">在线支付</span></div>
+
+        <dl class="info">
+            <dt><span>确认收货地址</span></dt>
+            <dd>
+                <div class="item"><span><font>*</font>所在地区：</span><select><option value="广东省">广东省</option></select><select><option value="深圳市">深圳市</option></select><input type="tex" class="txt" /></div>
+                <div class="item"><span><font>*</font>邮政编码：</span><input type="tex" class="txt" /></div>
+                <div class="item">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="8%"><span><font>*</font>详细地址：</span></td>
+                            <td width="92%"><textarea></textarea></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item"><span><font>*</font>收货人姓名：</span><input type="tex" class="txt" /></div>
+                <div class="item"><span><font>*</font>手机：</span><input type="tex" class="txt" /></div>
+                <div class="item"><span><font>*</font>电话：</span><input type="tex" class="txt" /></div>
+                <div class="item"><input type="submit" class="sub" value="保存收货人信息" /></div>
+            </dd>
+        </dl>
+
         <dl>
-            <dt><span>我的购物车</span></dt>
+            <dt><span>确认订单信息</span></dt>
             <dd>
                 <table width="100%" cellpadding="0" cellspacing="0" border="0">
                     <tr class="tr_t">
-                        <td width="4%"><input type="checkbox" checked="checked" /></td>
-                        <td width="4%">全选</td>
-                        <td width="35%">商品</td>
-                        <td width="26%">单价</td>
-                        <td width="6%">数量</td>
-                        <td width="14%">小计</td>
-                        <td width="11%">操作</td>
+                        <td width="2%">&nbsp;</td>
+                        <td width="48%">商品</td>
+                        <td width="25%">单价</td>
+                        <td width="13%">数量</td>
+                        <td width="12%">小计</td>
                     </tr>
                     <tr class="tr_c">
-                        <td><input type="checkbox" checked="checked" /></td>
-                        <td colspan="2">
+                        <td>&nbsp;</td>
+                        <td>
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
                                     <td width="15%"><img src="~/images/ico23.jpg" /></td>
@@ -62,32 +82,18 @@
                             </table>
                         </td>
                         <td class="price">￥3083.00</td>
-                        <td><span class="jian">-</span><input type="text" value="1" /><span class="jia">+</span></td>
+                        <td>1</td>
                         <td class="price">￥3083.00</td>
-                        <td><a href="#">删除</a></td>
-                    </tr>
-                    <tr class="tr_c">
-                        <td><input type="checkbox" checked="checked" /></td>
-                        <td colspan="2">
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                <tr>
-                                    <td width="15%"><img src="images/ico23.jpg" /></td>
-                                    <td width="85%"><a href="#" class="title">头层牛皮真皮沙发 客厅家具 FPSF0814 进口中厚皮 双人位+单人位+贵妃位</a></td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td class="price">￥3083.00</td>
-                        <td><span class="jian">-</span><input type="text" value="1" /><span class="jia">+</span></td>
-                        <td class="price">￥3083.00</td>
-                        <td><a href="#">删除</a></td>
                     </tr>
                     <tr class="tr_d">
                         <td colspan="7">
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
-                                    <td width="75%"><span class="del"><a href="#">删除选中商品</a></span></td>
-                                    <td width="11%">已选商品  <strong>1</strong>  件</td>
-                                    <td width="14%" class="all_price">合计：<font>￥3083.00</font></td>
+                                    <td width="3%">&nbsp;</td>
+                                    <td width="6%">买家留言：</td>
+                                    <td width="75%"><input type="text" value="" class="msg" /></td>
+                                    <td width="6%">应付金额：</td>
+                                    <td width="10%" class="all_price"><font>￥3083.00</font></td>
                                 </tr>
                             </table>
                         </td>
